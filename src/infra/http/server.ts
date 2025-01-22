@@ -1,4 +1,3 @@
-import { env } from '@/env'
 import { uploadImageRoute } from '@/infra/http/routes/upload-image'
 import { transformSwaggerSchema } from '@/infra/http/transform-swagger-schema'
 import fastifyCors from '@fastify/cors'
@@ -51,8 +50,6 @@ server.register(fastifySwaggerUi, {
 })
 
 server.register(uploadImageRoute)
-
-console.log(env.DATABASE_URL)
 
 server.listen({ port: 3333, host: '0.0.0.0' }, (err, address) => {
   if (err) {
